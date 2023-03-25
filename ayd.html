@@ -8,24 +8,45 @@
         
     </head>
     <body>
-        
 
-             <ul> <!-- ul deyince basinda nokta oluyor ol deyince 1,2,3.. diye siraliyor -->
-                <li ><a >Steganography</a></li>
-                    <input type="checkbox"  name="Strings" />
-                    <label>Strings</label> <br>   
-                <li ><a > </a>Misc</a></li> <!-- <a dedikten sonra href diyerek link ya da css gibi baska dosya ekleyebilirsin-->
-                <li ><a >Forensics</a></li>
-                    <input type="checkbox" id="deneme" name="deneme" value="deneme" />
-                    <label>deneme</label> <br>
+         
+            <style>
+                .hidden {
+                    display: none; /* bu ufak kisim css bolumu, display none, tanimladigim hidden sinifini gizliyor*/
+                }
+            </style>
+            <ul>
+                <li onclick="toggle('steganography')">Steganography</li> 
+                <label id="steganography" class="hidden"><input type="checkbox" /> Deneme</label>
+
+                <li onclick="toggle ('misc')">Misc</li>
+                <label id="misc" class="hidden"><input type="checkbox" >baska bi deneme</label>
+
+                <li onclick="toggle ('forensics')">Forensics</li>
+                <label id="forensics" class="hidden"><input type="checkbox" >baska deneme</label>
+
+                <li onclick="toggle ('pcap')">PCAP Analysis</li>
                 
-                <li ><a >PCAP Analysis</a></li>
-                <li ><a >PWN</a></li>
-                <li> <a> Binary Exploitation</a></li>
-            </ul> 
-        
-         
-         
+                
+                <li onclick="toggle ('pwn')">PWN</li>
+
+                
+                <li onclick="toggle ('binary')">Binary Exploitation</li>
+
+            </ul>
+
+            <script>
+                function toggle(id) { /*onclick ile sitede olayi tetikledigimde toggle cagrilir ve label'in gorunurlugu degisir */
+                    var x = document.getElementById(id); /* toggle, id parametresine sahip deger alinir ve style display kontrol edilir ve degerin gorunurlugu kontrol edilir*/
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                    } else {
+                        x.style.display = "none";
+                    }
+                }  
+            </script> 
+            
+            
 
         <a href="pop-up.html">
             
